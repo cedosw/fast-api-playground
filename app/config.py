@@ -13,6 +13,9 @@ log = logging.getLogger("uvicorn")
 class Settings(BaseSettings):
     environment: str = os.getenv("ENVIRONMENT")
     testing: bool = os.getenv("TESTING")
+    mongo_url: str = os.getenv("MONGO_URL")
+
+
 
 @lru_cache()
 def get_settings() -> BaseSettings:
